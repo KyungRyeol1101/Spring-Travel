@@ -1,7 +1,6 @@
 package com.chris.travel.web;
 
 import com.chris.travel.domain.posts.PostsRepository;
-import com.chris.travel.dto.posts.PostsSaveRequestDto;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,10 +16,5 @@ public class WebRestController {
     @GetMapping("/hello")
     public String hello() {
         return "Hello World";
-    }
-
-    @PostMapping("/posts")
-    public void savePosts(@RequestBody PostsSaveRequestDto dto){
-        postsRepository.save(dto.toEntity());
     }
 }
